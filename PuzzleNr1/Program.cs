@@ -2031,8 +2031,8 @@ Console.WriteLine(decreased.Count);*/
 ///Lösningen till fråga 2
 ///
 
-int[] testDataWindows = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
-int n = testDataWindows.Length;
+//int[] testDataWindows = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+int n = sampleData.Length;
 int windowSize = 3;
 //int windowSum = 0;
 List<int> testData = new List<int>();
@@ -2044,7 +2044,7 @@ for (int i = 0; i <= n - windowSize; i++)
 
     for (int j = i;j < windowSize + i; j++)
     {
-        windowSum += testDataWindows[j];
+        windowSum += sampleData[j];
         
         
     }
@@ -2057,7 +2057,7 @@ for (int i = 0; i <= n - windowSize; i++)
 
 
 }
-foreach (int i in testData) { Console.WriteLine(i); }
+
  // okej här har jag nu de första tre platserna ihop plussat och summan stämmer när jag sedan kör testet byt bara ut += testData till riktiga datan
  //nu  är det dags att jämföra samt räkna ökningar
  List<int> increased2 = new List<int>();
@@ -2074,12 +2074,12 @@ for (int i = 1; i < filterData.Length; i++)
     }
     else if (filterData[i] < filterData[i + 1])
     {
-        Console.WriteLine("{0} . decreased", sampleData[i]);
+        Console.WriteLine("{0} . decreased", filterData[i]);
         decreased2.Add(i);
     }
 
 }
-Console.WriteLine(increased2.Count);
+Console.WriteLine("DETTA ÄR DEN SAMMANLAGA SUMMAN UTAV ANTAL INCREASED {0}",increased2.Count);
 
 
 
