@@ -2004,10 +2004,11 @@ int[] sampleData = new int[] { 103,
 9538,
 9548,
  };
-List<int> increased = new List<int>();
+/// <summary>
+/// Lösningen till fråga 1
+/// </summary>
+/*List<int> increased = new List<int>();
 List<int> decreased = new List<int>();
-
-
 for (int i = 1; i < sampleData.Length; i++)
 {
 
@@ -2025,7 +2026,48 @@ for (int i = 1; i < sampleData.Length; i++)
    
 }
 Console.WriteLine(increased.Count);
-Console.WriteLine(decreased.Count);
+Console.WriteLine(decreased.Count);*/
+
+///Lösningen till fråga 2
+///
+
+int[] testDataWindows = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+int n = testDataWindows.Length;
+int windowSize = 3;
+//int windowSum = 0;
+List<int> testData = new List<int>();
+
+for (int i = 0; i <= n - windowSize; i++)
+{
+    int windowSum = 0;
+    
+
+    for (int j = i;j < windowSize + i; j++)
+    {
+        windowSum += testDataWindows[j];
+        
+        
+    }
+
+
+
+    testData.Add(windowSum);
+
+
+
+
+}
+foreach (int i in testData)
+{
+    Console.WriteLine(i);
+}
+ 
+
+
+
+
+// okej här har jag nu de första tre platserna ihop plussat och summan stämmer när jag sedan kör testet byt bara ut += testData till riktiga datan
+
 
 
 
