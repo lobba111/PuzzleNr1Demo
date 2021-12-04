@@ -2057,17 +2057,29 @@ for (int i = 0; i <= n - windowSize; i++)
 
 
 }
-foreach (int i in testData)
+foreach (int i in testData) { Console.WriteLine(i); }
+ // okej här har jag nu de första tre platserna ihop plussat och summan stämmer när jag sedan kör testet byt bara ut += testData till riktiga datan
+ //nu  är det dags att jämföra samt räkna ökningar
+ List<int> increased2 = new List<int>();
+List<int> decreased2 = new List<int>();
+ int[] filterData = testData.ToArray(); //här konverterar jag min lista av summor till en array of ints för att kunna enkelt använda samma algo jag skrev innan
+for (int i = 1; i < filterData.Length; i++)
 {
-    Console.WriteLine(i);
+
+    if (filterData[i] > filterData[i - 1])
+    {
+        Console.WriteLine("{0} . INCREASED", filterData[i]);
+
+        increased2.Add(i);
+    }
+    else if (filterData[i] < filterData[i + 1])
+    {
+        Console.WriteLine("{0} . decreased", sampleData[i]);
+        decreased2.Add(i);
+    }
+
 }
- 
-
-
-
-
-// okej här har jag nu de första tre platserna ihop plussat och summan stämmer när jag sedan kör testet byt bara ut += testData till riktiga datan
-
+Console.WriteLine(increased2.Count);
 
 
 
