@@ -2007,34 +2007,34 @@ int[] sampleData = new int[] { 103,
 /// <summary>
 /// Lösningen till fråga 1
 /// </summary>
-/*List<int> increased = new List<int>();
+List<int> increased = new List<int>();
 List<int> decreased = new List<int>();
 for (int i = 1; i < sampleData.Length; i++)
 {
 
     if (sampleData[i] > sampleData[i - 1])
     {
-        Console.WriteLine("{0} . INCREASED", sampleData[i]);
+        
 
         increased.Add(i);
     }
     else if (sampleData[i] < sampleData[i + 1])
     {
-        Console.WriteLine("{0} . decreased", sampleData[i]);
+        
         decreased.Add(i);
     }
    
 }
-Console.WriteLine(increased.Count);
-Console.WriteLine(decreased.Count);*/
+Console.WriteLine("HÄR ÄR SVARET PÅ ANTAL ÖKNINGAR FÖR FRÅGA 1 : {0}",increased.Count);
+
 
 ///Lösningen till fråga 2
-///
 
-//int[] testDataWindows = new int[] { 199, 200, 208, 210, 200, 207, 240, 269, 260, 263 };
+
+
 int n = sampleData.Length;
 int windowSize = 3;
-//int windowSum = 0;
+
 List<int> testData = new List<int>();
 
 for (int i = 0; i <= n - windowSize; i++)
@@ -2060,26 +2060,26 @@ for (int i = 0; i <= n - windowSize; i++)
 
  // okej här har jag nu de första tre platserna ihop plussat och summan stämmer när jag sedan kör testet byt bara ut += testData till riktiga datan
  //nu  är det dags att jämföra samt räkna ökningar
- List<int> increased2 = new List<int>();
+List<int> increased2 = new List<int>();
 List<int> decreased2 = new List<int>();
- int[] filterData = testData.ToArray(); //här konverterar jag min lista av summor till en array of ints för att kunna enkelt använda samma algo jag skrev innan
+int[] filterData = testData.ToArray(); //här konverterar jag min lista av summor till en array of ints för att kunna enkelt använda samma algo jag skrev innan
 for (int i = 1; i < filterData.Length; i++)
 {
 
     if (filterData[i] > filterData[i - 1])
     {
-        Console.WriteLine("{0} . INCREASED", filterData[i]);
+        
 
         increased2.Add(i);
     }
     else if (filterData[i] < filterData[i + 1])
     {
-        Console.WriteLine("{0} . decreased", filterData[i]);
+        
         decreased2.Add(i);
     }
 
 }
-Console.WriteLine("DETTA ÄR DEN SAMMANLAGA SUMMAN UTAV ANTAL INCREASED {0}",increased2.Count);
+Console.WriteLine("DETTA ÄR DEN SAMMANLAGA SUMMAN UTAV ANTAL INCREASED FÖR FRÅGA 2 : {0}",increased2.Count);
 
 
 
